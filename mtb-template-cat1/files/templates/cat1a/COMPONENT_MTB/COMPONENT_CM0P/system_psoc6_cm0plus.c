@@ -311,23 +311,6 @@ void __iar_dynamic_initialization(void);
 #endif /* defined(__GNUC__) && !defined(__ARMCC_VERSION) */
 
 
-void CyMain(void)
-{
-#if defined(__ICCARM__)
-    /* Initialize data section */
-    __iar_data_init3();
-
-    /* Initialization hook for RTOS environment  */
-    cy_toolchain_init();
-
-    /* Call the constructors of all global objects */
-    __iar_dynamic_initialization();
-#endif
-
-    __PROGRAM_START();
-}
-
-
 /******************************************************************************/
 // TVIIBE SystemInit
 void SystemInit(void)
