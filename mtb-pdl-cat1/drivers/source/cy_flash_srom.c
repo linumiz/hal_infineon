@@ -16,11 +16,10 @@
 #if defined (CY_IP_MXFLASHC_VERSION_ECT)
 #include "cy_flash_srom.h"
 #include "cy_ipc_drv.h"
+#include <zephyr/linker/section_tags.h>
 
-CY_SECTION_SHAREDMEM
-CY_ALIGN(32) static un_srom_api_scrach_sram_t g_scratch; // This must locate on SRAM.
-CY_SECTION_SHAREDMEM
-CY_ALIGN(32) static un_srom_api_args_2_t      g_scratch2; // This must locate on SRAM.
+__aligned(32)  static un_srom_api_scrach_sram_t g_scratch __nocache; // This must locate on SRAM.
+__aligned(32) static un_srom_api_args_2_t      g_scratch2 __nocache; // This must locate on SRAM.
 static uint32_t message[2];
 static cy_srom_handler gp_srom_resp_handler = NULL;
 
