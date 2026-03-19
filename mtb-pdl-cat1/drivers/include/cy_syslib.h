@@ -983,7 +983,7 @@ typedef double   float64_t; /**< Specific-length typedef for the basic numerical
 /** The fault logging system requested a reset from its Deep-Sleep logic. */
 #define CY_SYSLIB_RESET_DPSLP_FAULT     (0x0004U)
 
-#if defined (CY_IP_M33SYSCPUSS) || defined (CY_IP_M7CPUSS)
+#if defined (CY_IP_M33SYSCPUSS) || defined (CY_IP_M7CPUSS) ||  defined (CY_IP_M4CPUSS)
 /** The fault logging system requested a reset from its Test Controller or debugger asserted test. */
 /**
 * \note
