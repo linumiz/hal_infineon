@@ -71,8 +71,8 @@ cy_en_i2s_status_t Cy_I2S_Init(I2S_Type * base, cy_stc_i2s_config_t const * conf
 #if (CY_IP_MXAUDIOSS_VERSION>=2)
         REG_I2S_CLOCK_CTL(base) = _VAL2FLD(I2S_CLOCK_CTL_CLOCK_DIV, clockDiv) |
                                   _BOOL2FLD(I2S_CLOCK_CTL_CLOCK_SEL, config->extClk) |
-                                  _VAL2FLD(I2S_CLOCK_CTL_CLOCK_DIV, config->mclkDiv) |
-                                  _BOOL2FLD(I2S_CLOCK_CTL_CLOCK_SEL, config->mclkEn);
+                                  _VAL2FLD(I2S_CLOCK_CTL_MCLK_DIV, config->mclkDiv) |
+                                  _BOOL2FLD(I2S_CLOCK_CTL_MCLK_EN, config->mclkEn);
 #else
         REG_I2S_CLOCK_CTL(base) = _VAL2FLD(I2S_CLOCK_CTL_CLOCK_DIV, clockDiv) |
                                   _BOOL2FLD(I2S_CLOCK_CTL_CLOCK_SEL, config->extClk);
